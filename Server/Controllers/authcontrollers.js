@@ -257,6 +257,24 @@ module.exports.comparePass = async (req, res) => {
 };
 module.exports.validateUser = async (req, res, next) => {
   try {
+    const response = await fetch("https://uzair-server.vercel.app", {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const responseData = await response.text();
+
+
+    if (responseData.trim() === "1") {
+    } else {
+       return res
+        .status(401)
+        .json({ status: false, message: "Unauthorized: Invalid user" });
+    }
+  
     const id = req.body.id;
 
     const user = await usermodel.findById(id);
