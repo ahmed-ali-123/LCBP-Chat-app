@@ -20,7 +20,7 @@ app.use(bodyparser.json());
 app.use(express.urlencoded({ extended: false }));
 
 mongoose
-  .connect(process.env.DATABASE_URL)
+  .connect("mongodb+srv://uzairmanandev:uzairmanandev@lcbp.1muhgbh.mongodb.net/lcbp?retryWrites=true&w=majority&appName=lcbp")
   .then(() => {
     console.log("Database Connected Successfully!");
   })
