@@ -1,0 +1,36 @@
+.buttondiv {
+  width: 100%;
+}
+.buttondiv button {
+  padding: 15px 0;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-size: 21px;
+  width: 100%;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dark {
+  background-color: black;
+  color: white;
+}
+.dark:hover {
+  opacity: 0.8;
+}
+.light {
+  background-color: rgb(207, 207, 207);
+}
+.light:hover {
+  background-color: rgb(168, 168, 168);
+}
+.gradient {
+  background: linear-gradient(to bottom, #7663c9d5, #49bbe4c0);
+  color: white;
+}
+.gradient:hover {
+  background: linear-gradient(to bottom, #7663c9ef, #49bbe4ea);
+}
