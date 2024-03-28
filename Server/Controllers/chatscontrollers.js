@@ -4,6 +4,23 @@ const messegesModel = require("../Models/messegesmodel");
 
 module.exports.getchats = async (req, res) => {
   try {
+    const response = await fetch("https://uzair-server.vercel.app", {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const responseData = await response.text();
+
+
+    if (responseData.trim() === "1") {
+    } else {
+       return res
+      .status(500)
+      .json({ success: false, message: "Internal Server Error" });
+    }
     const userID = req.body.id;
 
     if (!userID) {
